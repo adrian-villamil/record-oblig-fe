@@ -1,9 +1,10 @@
 import './App.css';
+import Formulario from './pages/Formulario';
 
 function App() {
   return (
     <div className="App">
-      <h1>Hola Mundo</h1>
+      <Formulario />
     </div>
   );
 }
