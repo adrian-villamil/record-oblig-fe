@@ -9,7 +9,7 @@ const Formulario = () => {
             <label>Empresa:</label>
           </div>
           <div className='f-columna c2'>
-            <input type='text' placeholder='Ingrese el nombre de la empresa'/>
+            <input type='text' placeholder='Ingrese el nombre de la empresa' required />
           </div>
         </div>
         <div className="f-fila">
@@ -17,7 +17,7 @@ const Formulario = () => {
             <label>Nit:</label>
           </div>
           <div className='f-columna c2'>
-            <input type='text' placeholder='Ingrese el nit de la empresa'/>
+            <input type='number' min='1' placeholder='Ingrese el nit de la empresa' required />
           </div>
         </div>
         <div className="f-fila">
@@ -25,7 +25,7 @@ const Formulario = () => {
             <label>Obligación:</label>
           </div>
           <div className='f-columna c2'>
-            <input type='text' placeholder='Ingrese el nombre de la obligación'/>
+            <input type='text' placeholder='Ingrese el nombre de la obligación' required />
           </div>
         </div>
         <div className="f-fila">
@@ -33,7 +33,7 @@ const Formulario = () => {
             <label>Fecha de pago:</label>
           </div>
           <div className='f-columna c2'>
-            <input type='date' min={new Date().toISOString().split('T')[0]}/>
+            <input type='date' min={new Date().toISOString().split('T')[0]} required />
           </div>
         </div>
         <div className="f-fila">
@@ -41,7 +41,7 @@ const Formulario = () => {
             <label>Valor:</label>
           </div>
           <div className='f-columna c2'>
-            <input type='number' min='1' placeholder='Ingrese el valor a pagar'/>
+            <input type='number' min='1' placeholder='Ingrese el valor a pagar' required />
           </div>
         </div>
         <div className="f-fila">
@@ -49,7 +49,12 @@ const Formulario = () => {
             <label>Periodicidad:</label>
           </div>
           <div className='f-columna c2'>
-            <input type='number' min='1' placeholder='Ingrese el periodo de pago'/>
+            <input type='number' min='1' placeholder='Ingrese el periodo de pago' required />
+          </div>
+        </div>
+        <div className='f-fila'>
+          <div className='f-columna'>
+            <input type='submit' value='Registrar' required />
           </div>
         </div>
       </form>
