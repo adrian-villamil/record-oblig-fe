@@ -1,10 +1,10 @@
 import './App.css';
-import Formulario from './pages/Formulario';
+import IngresarDatosPage from './pages/IngresarDatosPage';
 
 function App() {
   return (
     <div className="App">
-      <Formulario />
+      <IngresarDatosPage />
     </div>
   );
 }
