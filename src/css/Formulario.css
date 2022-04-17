@@ -6,9 +6,10 @@
 }
 
 form {
+    width: 500px;
     border-radius: 20px;
     background-color: antiquewhite;
-    padding: 20px;
+    padding: 10px;
 }
 
 .f-fila {
@@ -16,11 +17,33 @@ form {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    padding: 20px;
+    padding: 10px;
+    background-color: rgba(165, 42, 42, 0);
 }
 
 .f-columna {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.c1 {
+    flex: 30%;
+    background-color: rgba(0, 255, 255, 0);
+}
+
+.c2 {
+    flex: 70%;
+    background-color: rgba(128, 255, 0, 0);
+}
+
+.c2 input {
+    width: 90%;
+    padding: 12px 20px;
+    border: 1px solid gray;
+    border-radius: 5px;
+}
+
+.c2 input[type=date] {
+    text-align: center;
 }
