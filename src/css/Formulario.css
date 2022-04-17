@@ -1,0 +1,26 @@
+.formulario {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+form {
+    border-radius: 20px;
+    background-color: antiquewhite;
+    padding: 20px;
+}
+
+.f-fila {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+}
+
+.f-columna {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
