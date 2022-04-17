@@ -47,3 +47,32 @@ form {
 .c2 input[type=date] {
     text-align: center;
 }
+
+.f-fila:last-child {
+    background-color: rgba(137, 43, 226, 0);
+}
+
+.f-fila:last-child .f-columna {
+    width: 100%;
+    background-color: rgba(255, 0, 0, 0);
+}
+
+.f-fila:last-child input {
+    padding: 12px 20px;
+    border: 2px solid rgb(48, 160, 48);
+    background-color: rgb(48, 160, 48);
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+.f-fila:last-child input:hover {
+    background-color: white;
+    color: black;
+}
+
+.f-fila:last-child input:active {
+    background-color: black;
+    color: white;
+}
