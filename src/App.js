@@ -1,8 +1,8 @@
 import './App.css';
-import Layout from './pages/Layout';
-import PrincipalPage from './pages/PrincipalPage';
-import IngresarDatosPage from './pages/IngresarDatosPage';
-import MostrarDatosPage from './pages/MostrarDatosPage';
+import Nav from './components/Nav';
+import EmpresasPage from './pages/EmpresasPage';
+import RegistrarDatosPage from './pages/RegistrarDatosPage';
+import PagosPage from './pages/PagosPage';
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
 function App() {
@@ -10,10 +10,10 @@ function App() {
     <div className="App">
       <BrowserRouter>
         <Routes>
-          <Route path='/' element={ <Layout /> }>
-            <Route index element={ <PrincipalPage /> } />
-            <Route path='ingresar-datos' element={ <IngresarDatosPage /> } />
-            <Route path='mostrar-datos' element={ <MostrarDatosPage /> } />
+          <Route path='/' element={ <Nav /> }>
+            <Route index element={ <RegistrarDatosPage /> } />
+            <Route path='empresas' element={ <EmpresasPage /> } />
+            <Route path='pagos' element={ <PagosPage /> } />
           </Route>
         </Routes>
       </BrowserRouter>
