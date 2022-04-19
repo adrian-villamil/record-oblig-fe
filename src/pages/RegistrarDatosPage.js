@@ -1,11 +1,11 @@
 import Formulario from "../components/Formulario"
 
-const IngresarDatosPage = () => {
+const RegistrarDatosPage = () => {
     return (
-        <div className="ingresar-datos">
+        <div className="registrar-datos">
             <Formulario />
         </div>
     )
 }
 
-export default IngresarDatosPage
+export default RegistrarDatosPage
