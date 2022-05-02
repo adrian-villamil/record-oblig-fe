@@ -1,9 +1,9 @@
-import Formulario from "../components/Formulario"
+import FormularioEmpresa from "../components/FormularioEmpresa"
 
 const RegistrarDatosPage = () => {
     return (
         <div className="registrar-datos">
-            <Formulario />
+            <FormularioEmpresa />
         </div>
     )
 }
