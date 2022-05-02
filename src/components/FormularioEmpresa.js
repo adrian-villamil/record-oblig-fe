@@ -30,7 +30,7 @@ const FormularioEmpresa = () => {
             <label>Nombre de la empresa:</label>
           </div>
           <div className='f-columna c2'>
-            <input type='text' onChange={handleChange} placeholder='Ingrese el nombre de la empresa' required />
+            <input type='text' name='nombre_empresa' onChange={handleChange} placeholder='Ingrese el nombre de la empresa' required />
           </div>
         </div>
         <div className="f-fila">
@@ -38,7 +38,7 @@ const FormularioEmpresa = () => {
             <label>Nit de la empresa:</label>
           </div>
           <div className='f-columna c2'>
-            <input type='number' min='1' onChange={handleChange} placeholder='Ingrese el nit de la empresa' required />
+            <input type='number' name='nit_empresa' min='1' onChange={handleChange} placeholder='Ingrese el nit de la empresa' required />
           </div>
         </div>
         <div className='f-fila'>
