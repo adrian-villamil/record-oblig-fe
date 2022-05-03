@@ -1,11 +1,11 @@
-.FormularioEmpresa {
+.FormularioEmpresa, .FormularioObligacion, .FormularioPago {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 form {
-    width: 500px;
+    width: 600px;
     border-radius: 20px;
     background-color: antiquewhite;
     padding: 10px;
@@ -28,12 +28,12 @@ form {
 }
 
 .c1 {
-    flex: 30%;
+    flex: 40%;
     background-color: rgba(0, 255, 255, 0);
 }
 
 .c2 {
-    flex: 70%;
+    flex: 60%;
     background-color: rgba(128, 255, 0, 0);
 }
 
