@@ -10,14 +10,42 @@ li {
     float: left;
 }
 
-li .link {
-    display: block;
+li .link, .dropbtn {
+    display: inline-block;
     padding: 12px;
     color: white;
     text-decoration: none;
     text-align: center;
 }
 
-li .link:hover {
+li .link:hover, .dropdown:hover .dropbtn {
     background-color: rgb(48, 160, 48);
+}
+
+li.dropdown {
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
+.dropdown-content .droplink {
+    color: black;
+    padding: 12px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.dropdown-content .droplink:hover {
+    background-color: #f1f1f1;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
 }

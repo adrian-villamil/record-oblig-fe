@@ -6,8 +6,13 @@ const Nav = () => {
     <div className="navbar">
       <nav>
         <ul>
-          <li>
-            <Link to='/' className="link">Registro</Link>
+          <li className="dropdown">
+            <a href="javascript:void(0)" className="dropbtn">Registrar</a>
+            <div className="dropdown-content">
+              <Link to='/' className="droplink">Empresa</Link>
+              <Link to='/registrar-obligacion' className="droplink">Obligacion</Link>
+              <Link to='/registrar-pago' className="droplink">Pago</Link>
+            </div>
           </li>
           <li>
             <Link to='/empresas' className="link">Empresas</Link>
