@@ -13,10 +13,14 @@ const FormularioEmpresa = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    fetch("http://localhost:3030/empresas", {
+    const data = {
+      nombre_empresa: inputs.nombre_empresa,
+      nit_empresa: inputs.nit_empresa
+    }
+    fetch("http://127.0.0.1:8000/api/empresas/create/", {
       method: 'POST',
       headers: {'Content-Type': 'application/json'},
-      body: JSON.stringify(inputs)
+      body: JSON.stringify(data)
     }).catch(error => {
       alert("Hubo un error " + error);
     });

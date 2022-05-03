@@ -14,7 +14,7 @@ const Empresas = ({ empresas }) => {
           </tr>
         </thead>
         <tbody>
-          {empresas.map(empresa => <Empresa key={empresa.id_empresa} empresa={empresa} />)}
+          {empresas.map(empresa => <Empresa key={empresa.id} empresa={empresa} />)}
         </tbody>
       </table>
     </div>

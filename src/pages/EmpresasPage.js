@@ -7,7 +7,7 @@ const EmpresasPage = () => {
   const [empresas, setEmpresas] = useState([]);
 
   useEffect(() => {
-    axios("http://localhost:3030/empresas").then(response => {
+    axios("http://127.0.0.1:8000/api/empresas/").then(response => {
       setEmpresas(response.data)
     }).catch(error => {
       alert("Hubo un error: " + error)
