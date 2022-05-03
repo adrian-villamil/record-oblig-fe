@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import '../css/FormularioEmpresa.css'
+import '../css/Formularios.css'
 
 const FormularioEmpresa = () => {
 
