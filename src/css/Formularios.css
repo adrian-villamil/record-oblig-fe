@@ -57,7 +57,7 @@ form {
     background-color: rgba(255, 0, 0, 0);
 }
 
-.f-fila:last-child input {
+.f-fila:last-child input[type='submit'] {
     padding: 12px 20px;
     border: 2px solid rgb(48, 160, 48);
     background-color: rgb(48, 160, 48);
@@ -67,7 +67,7 @@ form {
     transition: 0.4s;
 }
 
-.f-fila:last-child input:hover {
+.f-fila:last-child input[type='submit']:hover {
     background-color: white;
     color: black;
 }
