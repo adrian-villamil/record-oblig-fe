@@ -27,7 +27,7 @@ const FormularioObligacion = () => {
       body: JSON.stringify({
         id_empresa: idEmpresa,
         nombre_obligacion: nombreObligacion,
-        fecha_pago_vencimiento: fechaVencimiento,
+        fecha_pago_obligacion: fechaVencimiento,
         valor: costo,
         periodicidad: periodo
       })
@@ -78,7 +78,7 @@ const FormularioObligacion = () => {
             <label>Periodo de pago:</label>
           </div>
           <div className='f-columna c2'>
-            <input type='number' name="periodicidad" min='1' placeholder='Ingrese el periodo de pago' onChange={(e) => setPeriodo(e.target.value)} required />
+            <input type='number' name="periodicidad" min='1' placeholder='Ingrese en días el periodo de pago' onChange={(e) => setPeriodo(e.target.value)} required />
           </div>
         </div>
         <div className='f-fila'>
