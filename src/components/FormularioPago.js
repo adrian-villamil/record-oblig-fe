@@ -42,9 +42,7 @@ const FormularioPago = () => {
         <FilaBoxForm esSubmit={false} labelTexto='Fecha de pago:'>
           <input type='date' name="fecha_pago" min={new Date().toISOString().split('T')[0]} onChange={(e) => setFechaPago(e.target.value)} required />
         </FilaBoxForm>
-        <FilaBoxForm esSubmit={true}>
-          <input type='submit' value='Registrar' required />
-        </FilaBoxForm>
+        <FilaBoxForm esSubmit={true} />
       </form>
     </div>
   )

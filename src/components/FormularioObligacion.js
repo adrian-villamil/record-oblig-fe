@@ -57,9 +57,7 @@ const FormularioObligacion = () => {
         <FilaBoxForm esSubmit={false} labelTexto='Periodo de pago:'>
           <input type='number' name="periodicidad" min='1' placeholder='Ingrese en días el periodo de pago' onChange={(e) => setPeriodo(e.target.value)} required />
         </FilaBoxForm>
-        <FilaBoxForm esSubmit={true}>
-          <input type='submit' value='Registrar' required />
-        </FilaBoxForm>
+        <FilaBoxForm esSubmit={true} />
       </form>
     </div>
   )

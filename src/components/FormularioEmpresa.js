@@ -30,9 +30,7 @@ const FormularioEmpresa = () => {
         <FilaBoxForm esSubmit={false} labelTexto="Nit de la empresa:">
           <input type='number' name='nit_empresa' min='1' onChange={(e) => { setNit(e.target.value) }} placeholder='Ingrese el nit de la empresa' required />
         </FilaBoxForm>
-        <FilaBoxForm esSubmit={true}>
-          <input type='submit' value='Registrar' required />
-        </FilaBoxForm>
+        <FilaBoxForm esSubmit={true} />
       </form>
     </div>
   )
