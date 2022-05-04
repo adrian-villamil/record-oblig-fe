@@ -48,7 +48,7 @@ const FormularioPago = () => {
             <label>Fecha de pago:</label>
           </div>
           <div className='f-columna c2'>
-            <input type='date' name="fecha_pago_vencimiento" min={new Date().toISOString().split('T')[0]} onChange={(e) => setFechaPago(e.target.value)} required />
+            <input type='date' name="fecha_pago" min={new Date().toISOString().split('T')[0]} onChange={(e) => setFechaPago(e.target.value)} required />
           </div>
         </div>
         <div className='f-fila'>
