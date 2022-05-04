@@ -25,7 +25,7 @@ const FormularioEmpresa = () => {
     <div className="FormularioEmpresa">
       <form onSubmit={handleSubmit}>
         <FilaBoxForm esSubmit={false} labelTexto="Nombre de la empresa:">
-          <input type='text' name='nombre_empresa' onChange={(e) => { setNombre(e.target.value) }} placeholder='Ingrese el nombre de la empresa' required />
+          <input type='text' name='nombre_empresa' onChange={(e) => { setNombre(e.target.value.toUpperCase()) }} placeholder='Ingrese el nombre de la empresa' required />
         </FilaBoxForm>
         <FilaBoxForm esSubmit={false} labelTexto="Nit de la empresa:">
           <input type='number' name='nit_empresa' min='1' onChange={(e) => { setNit(e.target.value) }} placeholder='Ingrese el nit de la empresa' required />

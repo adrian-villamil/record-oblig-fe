@@ -42,7 +42,7 @@ const FormularioObligacion = () => {
           </select>
         </FilaBoxForm>
         <FilaBoxForm esSubmit={false} labelTexto='Nombre de la obligación:'>
-          <input type='text' name='nombre_obligacion' placeholder='Ingrese el nombre de la obligacion' onChange={(e) => setNombreObligacion(e.target.value)} required />
+          <input type='text' name='nombre_obligacion' placeholder='Ingrese el nombre de la obligacion' onChange={(e) => setNombreObligacion(e.target.value.toUpperCase())} required />
         </FilaBoxForm>
         <FilaBoxForm esSubmit={false} labelTexto='Periodo de pago:'>
           <input type='number' name="periodicidad" min='1' placeholder='Ingrese en días el periodo de pago' onChange={(e) => setPeriodo(e.target.value)} required />
