@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import '../css/Formularios.css'
+import FilaBoxForm from "./FilaBoxForm";
 
 const FormularioPago = () => {
 
@@ -33,29 +34,17 @@ const FormularioPago = () => {
   return (
     <div className="FormularioPago">
       <form onSubmit={handleSubmit}>
-      <div className="f-fila">
-          <div className="f-columna c1">
-            <label>Nombre de la obligación:</label>
-          </div>
-          <div className="f-columna c2">
-            <select name="id" onChange={(e) => setIdObligacion(e.target.value)}>
-              {obligaciones.map(obligacion => <option key={obligacion.id} value={obligacion.id}>{obligacion.nombre_obligacion}</option>)}
-            </select>
-          </div>
-        </div>
-        <div className="f-fila">
-          <div className='f-columna c1'>
-            <label>Fecha de pago:</label>
-          </div>
-          <div className='f-columna c2'>
-            <input type='date' name="fecha_pago" min={new Date().toISOString().split('T')[0]} onChange={(e) => setFechaPago(e.target.value)} required />
-          </div>
-        </div>
-        <div className='f-fila'>
-          <div className='f-columna'>
-            <input type='submit' value='Registrar' required />
-          </div>
-        </div>
+        <FilaBoxForm esSubmit={false} labelTexto='Nombre de la obligación:'>
+          <select name="id" onChange={(e) => setIdObligacion(e.target.value)}>
+            {obligaciones.map(obligacion => <option key={obligacion.id} value={obligacion.id}>{obligacion.nombre_obligacion}</option>)}
+          </select>
+        </FilaBoxForm>
+        <FilaBoxForm esSubmit={false} labelTexto='Fecha de pago:'>
+          <input type='date' name="fecha_pago" min={new Date().toISOString().split('T')[0]} onChange={(e) => setFechaPago(e.target.value)} required />
+        </FilaBoxForm>
+        <FilaBoxForm esSubmit={true}>
+          <input type='submit' value='Registrar' required />
+        </FilaBoxForm>
       </form>
     </div>
   )
