@@ -5,14 +5,11 @@ import '../css/Formularios.css'
 const FormularioObligacion = () => {
 
   const [empresas, setEmpresas] = useState([]);
-
-  const [datos, setDatos] = useState({
-    id_empresa: '',
-    nombre_obligacion: '',
-    fecha_pago_vencimiento: '',
-    valor: 0,
-    periodicidad: 0
-  })
+  const [idEmpresa, setIdEmpresa] = useState('');
+  const [nombreObligacion, setNombreObligacion] = useState('');
+  const [fechaVencimiento, setFechaVencimiento] = useState('');
+  const [costo, setCosto] = useState(0);
+  const [periodo, setPeriodo] = useState(0);
 
   useEffect(() => {
     axios("http://127.0.0.1:8000/api/empresas/").then(response => {
@@ -27,7 +24,13 @@ const FormularioObligacion = () => {
     fetch("http://127.0.0.1:8000/api/obligaciones/create/", {
       method: 'POST',
       headers: {'Content-Type': 'application/json'},
-      body: JSON.stringify(datos)
+      body: JSON.stringify({
+        id_empresa: idEmpresa,
+        nombre_obligacion: nombreObligacion,
+        fecha_pago_vencimiento: fechaVencimiento,
+        valor: costo,
+        periodicidad: periodo
+      })
     }).catch(error => {
       alert("Hubo un error " + error);
     });
@@ -41,7 +44,7 @@ const FormularioObligacion = () => {
             <label>Nombre de la empresa:</label>
           </div>
           <div className="f-columna c2">
-            <select name="id" onChange={(e) => setDatos(datos.id_empresa = e.target.value)}>
+            <select name="id" onChange={(e) => setIdEmpresa(e.target.value)}>
               {empresas.map(empresa => <option key={empresa.id} value={empresa.id}>{empresa.nombre_empresa}</option>)}
             </select>
           </div>
@@ -51,7 +54,7 @@ const FormularioObligacion = () => {
             <label>Nombre de la obligacion:</label>
           </div>
           <div className='f-columna c2'>
-            <input type='text' name='nombre_obligacion' placeholder='Ingrese el nombre de la obligacion' onChange={(e) => setDatos(datos.nombre_obligacion = e.target.value)} required />
+            <input type='text' name='nombre_obligacion' placeholder='Ingrese el nombre de la obligacion' onChange={(e) => setNombreObligacion(e.target.value)} required />
           </div>
         </div>
         <div className="f-fila">
@@ -59,7 +62,7 @@ const FormularioObligacion = () => {
             <label>Fecha de vencimiento:</label>
           </div>
           <div className='f-columna c2'>
-            <input type='date' name="fecha_pago_vencimiento" min={new Date().toISOString().split('T')[0]} onChange={(e) => setDatos(datos.fecha_pago_vencimiento = e.target.value)} required />
+            <input type='date' name="fecha_pago_vencimiento" min={new Date().toISOString().split('T')[0]} onChange={(e) => setFechaVencimiento(e.target.value)} required />
           </div>
         </div>
         <div className="f-fila">
@@ -67,7 +70,7 @@ const FormularioObligacion = () => {
             <label>Valor a pagar:</label>
           </div>
           <div className='f-columna c2'>
-            <input type='number' name="valor" min='1' placeholder='Ingrese el valor a pagar' onChange={(e) => setDatos(datos.valor = e.target.value)} required />
+            <input type='number' name="valor" min='1' placeholder='Ingrese el valor a pagar' onChange={(e) => setCosto(e.target.value)} required />
           </div>
         </div>
         <div className="f-fila">
@@ -75,7 +78,7 @@ const FormularioObligacion = () => {
             <label>Periodo de pago:</label>
           </div>
           <div className='f-columna c2'>
-            <input type='number' name="periodicidad" min='1' placeholder='Ingrese el periodo de pago' onChange={(e) => setDatos(datos.periodicidad = e.target.value)} required />
+            <input type='number' name="periodicidad" min='1' placeholder='Ingrese el periodo de pago' onChange={(e) => setPeriodo(e.target.value)} required />
           </div>
         </div>
         <div className='f-fila'>
