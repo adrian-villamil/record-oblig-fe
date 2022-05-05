@@ -37,8 +37,8 @@ form {
     background-color: rgba(128, 255, 0, 0);
 }
 
-.c2 input {
-    width: 90%;
+.c2 input, .c2 select {
+    width: 100%;
     padding: 12px 20px;
     border: 1px solid gray;
     border-radius: 5px;
@@ -72,7 +72,7 @@ form {
     color: black;
 }
 
-.f-fila:last-child input:active {
+.f-fila:last-child input[type='submit']:active {
     background-color: black;
     color: white;
 }
