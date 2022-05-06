@@ -1,15 +1,17 @@
 import { useState } from "react";
-import { useParams } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import FilaBoxForm from "./FilaBoxForm";
+import '../css/Formularios.css'
 
 const EditarEmpresa = () => {
-  const { id } = useParams();
+  const location = useLocation();
+  const state = location.state;
   const [nombre, setNombre] = useState('');
   const [nit, setNit] = useState('');
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    fetch(`http://127.0.0.1:8000/api/empresas/actualizar/${id}`, {
+    fetch(`http://127.0.0.1:8000/api/empresas/actualizar/${state.id}`, {
       method: 'PATCH',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
@@ -26,10 +28,10 @@ const EditarEmpresa = () => {
     <div className="EditarEmpresa">
       <form onSubmit={handleSubmit}>
         <FilaBoxForm esSubmit={false} labelTexto="Nombre de la empresa:">
-          <input type='text' name='nombre_empresa' onChange={(e) => { setNombre(e.target.value.toUpperCase()) }} placeholder='Ingrese el nombre de la empresa' required />
+          <input type='text' name='nombre_empresa' defaultValue={state.nombre} onChange={(e) => { setNombre(e.target.value.toUpperCase()) }} placeholder={state.nombre} required />
         </FilaBoxForm>
         <FilaBoxForm esSubmit={false} labelTexto="Nit de la empresa:">
-          <input type='number' name='nit_empresa' min='1' onChange={(e) => { setNit(e.target.value) }} placeholder='Ingrese el nit de la empresa' required />
+          <input type='number' name='nit_empresa' min='1' defaultValue={state.nit} onChange={(e) => { setNit(e.target.value) }} placeholder={state.nit} required />
         </FilaBoxForm>
         <FilaBoxForm esSubmit={true} submitValue='Modificar' />
       </form>
