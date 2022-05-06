@@ -6,4 +6,4 @@
 
 ### `Historias de usuario`
 
-[Abrir historias de usuario](https://facebook.github.io/create-react-app/docs/running-tests)
+[Abrir historias de usuario](https://docs.google.com/spreadsheets/d/1Sta9HxJSF8T8YJS3xa2VU07MqxSEr7S4MwxU2lCY9fo/edit#gid=0)
