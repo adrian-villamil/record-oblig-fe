@@ -6,6 +6,7 @@ import RegistrarObligacionPage from './pages/RegistrarObligacionPage';
 import RegistrarPagoPage from './pages/RegistrarPagoPage';
 import PagosPage from './pages/PagosPage';
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import ObligacionesPage from './pages/ObligacionesPage';
 
 function App() {
   return (
@@ -16,7 +17,12 @@ function App() {
             <Route index element={ <RegistrarEmpresaPage /> } />
             <Route path='registrar-obligacion' element={ <RegistrarObligacionPage />} />
             <Route path='registrar-pago' element={ <RegistrarPagoPage />} />
-            <Route path='empresas' element={ <EmpresasPage /> } />
+            <Route path='empresas' element={ <EmpresasPage /> }>
+              <Route path='editar/:idEmpresa' />
+            </Route>
+            <Route path='obligaciones' element={ <ObligacionesPage /> }>
+              <Route path='editar/:idObligacion' />
+            </Route>
             <Route path='pagos' element={ <PagosPage /> } />
           </Route>
         </Routes>
