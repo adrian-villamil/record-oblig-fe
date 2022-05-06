@@ -1,4 +1,4 @@
-.FormularioEmpresa, .FormularioObligacion, .FormularioPago {
+.FormularioEmpresa, .FormularioObligacion, .FormularioPago, .EditarEmpresa {
     display: flex;
     justify-content: center;
     align-items: center;
