@@ -9,7 +9,7 @@ const EditarObligacion = () => {
   const location = useLocation();
   const state = location.state;
   const [empresas, setEmpresas] = useState([]);
-  const [idEmpresa, setIdEmpresa] = useState(state.idEmpresa);
+  const empresa = empresas.map(empresa => empresa.id == state.idEmpresa ? empresa.nombre_empresa : '').join('');
   const [nombreObligacion, setNombreObligacion] = useState(state.nombre);
   const [periodo, setPeriodo] = useState(state.periodo);
 
@@ -27,13 +27,7 @@ const EditarObligacion = () => {
       method: 'PUT',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
-        id_empresa: idEmpresa,
-        nombre_obligacion: nombreObligacion.concat(empresas.map(empresa => {
-          if (empresa.id == idEmpresa) {
-            return empresa.nombre_empresa
-          }
-          return ''
-        }).join('').replace('', ' - ')),
+        nombre_obligacion: nombreObligacion,
         periodicidad: periodo
       })
     }).then(response => response.ok ? alert('Se registró la obligación correctamente') : alert('No se registró la obligación'))
@@ -46,9 +40,7 @@ const EditarObligacion = () => {
     <div className="EditarObligacion">
       <form onSubmit={handleSubmit}>
         <FilaBoxForm esSubmit={false} labelTexto='Nombre de la empresa:'>
-          <select name="id" value={idEmpresa} defaultValue={state.idEmpresa} onChange={(e) => setIdEmpresa(e.target.value)} required>
-            {empresas.map(empresa => <option key={empresa.id} value={empresa.id}>{empresa.nombre_empresa}</option>)}
-          </select>
+          <input type='text' name='nombre_empresa' value={empresa} disabled/>
         </FilaBoxForm>
         <FilaBoxForm esSubmit={false} labelTexto='Nombre de la obligación:'>
           <input type='text' name='nombre_obligacion' placeholder={state.nombre} defaultValue={state.nombre} onChange={(e) => setNombreObligacion(e.target.value.toUpperCase())} required />
