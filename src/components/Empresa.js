@@ -12,7 +12,7 @@ const Empresa = ({ empresa: { id, nombre_empresa, nit_empresa } }) => {
       <td>{idEmpresa}</td>
       <td>{nombreEmpresa}</td>
       <td>{nitEmpresa}</td>
-      <td><Link to={`/empresas/editar/${idEmpresa}`}>Editar</Link></td>
+      <td><Link to={`/empresas/editar/${idEmpresa}`} className='linkEditar'>Editar</Link></td>
     </tr>
   )
 }

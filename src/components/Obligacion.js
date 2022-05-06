@@ -14,7 +14,7 @@ const Obligacion = ({ obligacion: { id, id_empresa, nombre_obligacion, periodici
       <td>{idEmpresa}</td>
       <td>{nombreObligacion}</td>
       <td>{periodo}</td>
-      <td><Link to={`/obligaciones/editar/${idObligacion}`}>Editar</Link></td>
+      <td><Link to={`/obligaciones/editar/${idObligacion}`} className='linkEditar'>Editar</Link></td>
     </tr>
   )
 }
