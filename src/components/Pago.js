@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const Pago = ({ pago: { id, id_obligacion, fecha_pago, valor } }) => {
 
@@ -13,6 +14,7 @@ const Pago = ({ pago: { id, id_obligacion, fecha_pago, valor } }) => {
       <td>{idObligacion}</td>
       <td>{fechaPago}</td>
       <td>{costo}</td>
+      <td><Link to={`/pagos/editar/${idObligacion}`} className='linkEditar'>Editar</Link></td>
     </tr>
   )
 }
