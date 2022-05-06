@@ -30,7 +30,7 @@ const EditarObligacion = () => {
         nombre_obligacion: nombreObligacion,
         periodicidad: periodo
       })
-    }).then(response => response.ok ? alert('Se registró la obligación correctamente') : alert('No se registró la obligación'))
+    }).then(response => response.ok ? alert('Se modificó la obligación correctamente') : alert('No se modificó la obligación'))
       .catch(error => {
         alert("Hubo un error " + error);
       });
@@ -39,6 +39,7 @@ const EditarObligacion = () => {
   return (
     <div className="EditarObligacion">
       <form onSubmit={handleSubmit}>
+        <h2>Modificar obligación</h2>
         <FilaBoxForm esSubmit={false} labelTexto='Nombre de la empresa:'>
           <input type='text' name='nombre_empresa' value={empresa} disabled/>
         </FilaBoxForm>

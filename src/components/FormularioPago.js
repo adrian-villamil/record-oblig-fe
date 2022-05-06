@@ -37,6 +37,7 @@ const FormularioPago = () => {
   return (
     <div className="FormularioPago">
       <form onSubmit={handleSubmit}>
+        <h2>Crear pago</h2>
         <FilaBoxForm esSubmit={false} labelTexto='Nombre de la obligación:'>
           <select name="id" onChange={(e) => setIdObligacion(e.target.value)} required>
             {obligaciones.map(obligacion => <option key={obligacion.id} value={obligacion.id}>{obligacion.nombre_obligacion}</option>)}

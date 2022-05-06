@@ -37,6 +37,7 @@ const FormularioObligacion = () => {
   return (
     <div className="FormularioObligacion">
       <form onSubmit={handleSubmit}>
+        <h2>Crear obligación</h2>
         <FilaBoxForm esSubmit={false} labelTexto='Nombre de la empresa:'>
           <select name="id" value={idEmpresa} onChange={(e) => setIdEmpresa(e.target.value)} required>
             {empresas.map(empresa => <option key={empresa.id} value={empresa.id}>{empresa.nombre_empresa}</option>)}

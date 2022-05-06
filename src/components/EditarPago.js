@@ -30,7 +30,7 @@ const EditarPago = () => {
         fecha_pago: fechaPago,
         valor: costo
       })
-    }).then(response => response.ok ? alert('Se registró el pago correctamente') : alert('No se registró el pago'))
+    }).then(response => response.ok ? alert('Se modificó el pago correctamente') : alert('No se modificó el pago'))
       .catch(error => {
         alert("Hubo un error " + error);
       });
@@ -39,6 +39,7 @@ const EditarPago = () => {
   return (
     <div className="EditarPago">
       <form onSubmit={handleSubmit}>
+        <h2>Modificar pago</h2>
         <FilaBoxForm esSubmit={false} labelTexto='Nombre de la obligación:'>
           <input type='text' name='nombre_obligacion' value={obligacion} disabled />
         </FilaBoxForm>

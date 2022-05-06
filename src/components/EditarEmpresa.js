@@ -27,6 +27,7 @@ const EditarEmpresa = () => {
   return (
     <div className="EditarEmpresa">
       <form onSubmit={handleSubmit}>
+        <h2>Modificar empresa</h2>
         <FilaBoxForm esSubmit={false} labelTexto="Nombre de la empresa:">
           <input type='text' name='nombre_empresa' defaultValue={state.nombre} onChange={(e) => { setNombre(e.target.value.toUpperCase()) }} placeholder={state.nombre} required />
         </FilaBoxForm>
