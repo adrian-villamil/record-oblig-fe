@@ -18,6 +18,9 @@ const Nav = () => {
             <Link to='/empresas' className="link">Empresas</Link>
           </li>
           <li>
+            <Link to='/obligaciones' className="link">Obligaciones</Link>
+          </li>
+          <li>
             <Link to='/pagos' className="link">Pagos</Link>
           </li>
         </ul>
