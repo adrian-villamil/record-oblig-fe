@@ -1,5 +1,5 @@
 import Empresa from "./Empresa"
-import '../css/Empresas.css'
+import '../css/Tablas.css'
 
 const Empresas = ({ empresas }) => {
 
@@ -8,9 +8,10 @@ const Empresas = ({ empresas }) => {
       <table>
         <thead>
           <tr>
-            <th>id_empresa</th>
-            <th>nombre_empresa</th>
-            <th>nit_empresa</th>
+            <th>Id</th>
+            <th>Nombre</th>
+            <th>Nit</th>
+            <th></th>
           </tr>
         </thead>
         <tbody>
