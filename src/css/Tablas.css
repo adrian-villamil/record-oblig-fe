@@ -13,7 +13,7 @@ th, td {
 }
 
 th {
-    background-color: rgb(173, 37, 37);
+    background-color: rgb(48, 160, 48);
     color: white;
 }
 
@@ -24,4 +24,12 @@ tr:nth-child(even) {
 tr:hover {
     background-color: darkgray;
     color: white;
+}
+
+.linkEditar {
+    background-color: rgb(221, 187, 33);
+    color: white;
+    text-decoration: none;
+    padding: 8px;
+    border-radius: 5px;
 }
