@@ -8,6 +8,7 @@ import PagosPage from './pages/PagosPage';
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import ObligacionesPage from './pages/ObligacionesPage';
 import EditarEmpresa from './components/EditarEmpresa';
+import EditarObligacion from './components/EditarObligacion';
 
 function App() {
   return (
@@ -21,7 +22,7 @@ function App() {
             <Route path='empresas' element={ <EmpresasPage /> } />
             <Route path='editar-empresa/:idEmpresa' element={ <EditarEmpresa /> } />
             <Route path='obligaciones' element={ <ObligacionesPage /> } />
-            <Route path='editar-obligacion/:idObligacion' />
+            <Route path='editar-obligacion/:idObligacion' element={ <EditarObligacion /> } />
             <Route path='pagos' element={ <PagosPage /> } />
           </Route>
         </Routes>
