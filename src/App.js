@@ -9,6 +9,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import ObligacionesPage from './pages/ObligacionesPage';
 import EditarEmpresa from './components/EditarEmpresa';
 import EditarObligacion from './components/EditarObligacion';
+import EditarPago from './components/EditarPago';
 
 function App() {
   return (
@@ -20,10 +21,11 @@ function App() {
             <Route path='registrar-obligacion' element={ <RegistrarObligacionPage />} />
             <Route path='registrar-pago' element={ <RegistrarPagoPage />} />
             <Route path='empresas' element={ <EmpresasPage /> } />
-            <Route path='editar-empresa/:idEmpresa' element={ <EditarEmpresa /> } />
+            <Route path='editar-empresa/:id' element={ <EditarEmpresa /> } />
             <Route path='obligaciones' element={ <ObligacionesPage /> } />
-            <Route path='editar-obligacion/:idObligacion' element={ <EditarObligacion /> } />
+            <Route path='editar-obligacion/:id' element={ <EditarObligacion /> } />
             <Route path='pagos' element={ <PagosPage /> } />
+            <Route path='editar-pago/:id' element={ <EditarPago /> } />
           </Route>
         </Routes>
       </BrowserRouter>
