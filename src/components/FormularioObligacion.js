@@ -25,7 +25,12 @@ const FormularioObligacion = () => {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
         id_empresa: idEmpresa,
-        nombre_obligacion: nombreObligacion,
+        nombre_obligacion: nombreObligacion + empresas.map(empresa => {
+          if (empresa.id == idEmpresa) {
+            return empresa.nombre_empresa
+          }
+          return ''
+        }),
         periodicidad: periodo
       })
     }).catch(error => {
@@ -37,7 +42,7 @@ const FormularioObligacion = () => {
     <div className="FormularioObligacion">
       <form onSubmit={handleSubmit}>
         <FilaBoxForm esSubmit={false} labelTexto='Nombre de la empresa:'>
-          <select name="id" onChange={(e) => setIdEmpresa(e.target.value)} required>
+          <select name="id" value={idEmpresa} onChange={(e) => setIdEmpresa(e.target.value)} required>
             {empresas.map(empresa => <option key={empresa.id} value={empresa.id}>{empresa.nombre_empresa}</option>)}
           </select>
         </FilaBoxForm>
