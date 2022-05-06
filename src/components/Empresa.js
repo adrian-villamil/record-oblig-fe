@@ -1,18 +1,13 @@
-import { useState } from "react";
 import { Link } from "react-router-dom";
 
 const Empresa = ({ empresa: { id, nombre_empresa, nit_empresa } }) => {
 
-  const [idEmpresa, setIdEmpresa] = useState(id);
-  const [nombreEmpresa, setNombreEmpresa] = useState(nombre_empresa);
-  const [nitEmpresa, setNitEmpresa] = useState(nit_empresa);
-
   return (
     <tr>
-      <td>{idEmpresa}</td>
-      <td>{nombreEmpresa}</td>
-      <td>{nitEmpresa}</td>
-      <td><Link to={`/empresas/editar/${idEmpresa}`} className='linkEditar'>Editar</Link></td>
+      <td>{id}</td>
+      <td>{nombre_empresa}</td>
+      <td>{nit_empresa}</td>
+      <td><Link to={`/editar-empresa/${id}`} className='linkEditar' state={{id: id, nombre: nombre_empresa, nit: nit_empresa}}>Editar</Link></td>
     </tr>
   )
 }
