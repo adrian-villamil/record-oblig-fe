@@ -6,13 +6,13 @@ import '../css/Formularios.css'
 const EditarEmpresa = () => {
   const location = useLocation();
   const state = location.state;
-  const [nombre, setNombre] = useState('');
-  const [nit, setNit] = useState('');
+  const [nombre, setNombre] = useState(state.nombre);
+  const [nit, setNit] = useState(state.nit);
 
   const handleSubmit = (event) => {
     event.preventDefault();
     fetch(`http://127.0.0.1:8000/api/empresas/actualizar/${state.id}/`, {
-      method: 'PATCH',
+      method: 'PUT',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
         nombre_empresa: nombre,
