@@ -48,7 +48,7 @@ const FormularioPago = () => {
         <FilaBoxForm esSubmit={false} labelTexto='Valor de la obligación:'>
           <input type='number' name="valor" min='1'placeholder="Ingrese el valor a pagar" onChange={(e) => setCosto(e.target.value)} required />
         </FilaBoxForm>
-        <FilaBoxForm esSubmit={true} />
+        <FilaBoxForm esSubmit={true} submitValue='Registrar' />
       </form>
     </div>
   )

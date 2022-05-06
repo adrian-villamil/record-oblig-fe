@@ -15,7 +15,7 @@ const FilaBoxForm = (props) => {
   return (
     <div className="f-fila">
       <div className="f-columna">
-        <input type='submit' value='Registrar' required />
+        <input type='submit' value={props.submitValue} required />
       </div>
     </div>
   )
