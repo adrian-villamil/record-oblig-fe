@@ -28,7 +28,8 @@ const FormularioPago = () => {
         fecha_pago: fechaPago,
         valor: costo
       })
-    }).catch(error => {
+    }).then(response => response.ok ? alert('Se registró el pago correctamente') : alert('No se registró el pago'))
+    .catch(error => {
       alert("Hubo un error " + error);
     });
   }

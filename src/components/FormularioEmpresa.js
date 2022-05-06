@@ -16,7 +16,8 @@ const FormularioEmpresa = () => {
         nombre_empresa: nombre,
         nit_empresa: nit
       })
-    }).catch(error => {
+    }).then(response => response.ok ? alert('Se registró la empresa correctamente') : alert('No se registró la empresa'))
+    .catch(error => {
       alert("Hubo un error " + error);
     });
   }

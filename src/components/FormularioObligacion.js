@@ -25,15 +25,16 @@ const FormularioObligacion = () => {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
         id_empresa: idEmpresa,
-        nombre_obligacion: nombreObligacion + empresas.map(empresa => {
+        nombre_obligacion: nombreObligacion.concat(empresas.map(empresa => {
           if (empresa.id == idEmpresa) {
             return empresa.nombre_empresa
           }
           return ''
-        }),
+        }).join('').replace('',' - ')),
         periodicidad: periodo
       })
-    }).catch(error => {
+    }).then(response => response.ok ? alert('Se registró la obligación correctamente') : alert('No se registró la obligación'))
+    .catch(error => {
       alert("Hubo un error " + error);
     });
   }
